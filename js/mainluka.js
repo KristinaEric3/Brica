@@ -122,6 +122,7 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     let expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+<<<<<<< HEAD
   }
 
 
@@ -250,3 +251,6 @@ function validacijasignup(){
 
   
       }
+=======
+  }
+>>>>>>> da96520c0ca3badf55831cf93e03c8fc4e32da9d
