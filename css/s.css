@@ -1,5 +1,5 @@
 :root{
-    --primary-clr:#b38add;
+    --primary-clr:#606060;
 }
 * {
     margin: 0;
@@ -10,29 +10,33 @@
 
 body{
     min-height: 100vh;
-    display: flex;
     align-items: center;
     justify-content: center;
     background-color: #e2e1dc;
 }
-.container{
-    position: relative;
-    width: 1200px;
-    min-height: 850px;
-    margin: 0 auto;
+.kontenjer{
+    position: absolute;
+    width: 55% !important;
+    min-height: 350px;
+    top:20px;
+    left:20px;
     padding: 5px;
     color:#fff;
     display: flex;
     border-radius: 10px;
     background-color: #373c4f;
 }
+.kalendaros{
+  width:100px !important;
+}
 .left{
-    width: 90%;
+    height: 100%;
+    width: 50%;
     padding: 20px;
 }
 .calendar{
     position: relative;
-    width: 100%;
+    width: 100% !important;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -60,8 +64,9 @@ body{
     background-color: rgb(153,153,153);
 }
 .calendar .month{
+    margin-top:15px;
     width: 100%;
-    height: 150px;
+    height: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -83,7 +88,7 @@ body{
 
 .calendar .weekdays{
     width: 100%;
-    height: 100px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -108,12 +113,12 @@ body{
     padding: 0 20px;
     font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .calendar .days .day{
     width: 14.28%;
-    height: 90px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -234,24 +239,22 @@ body{
     border-radius: 0;
 }
 
-.container .right{
+.kontenjer .right{
     position: relative;
-    width: 40%;
-    min-height: 100%;
+    width: 50%;
     padding: 20px 0;
 }
 .right .today-date{
     width: 100%;
-    height: 50px;
+    height: 100px;
     display: flex;
     flex-wrap: wrap;
     gap:10px;
     align-items: center;
     justify-content: space-between;
     pad:  0 40px;
-    padding-left: 70px;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    padding: 20px;
+    padding-top:0px;
     text-transform: capitalize;
 }
 
@@ -348,8 +351,6 @@ body{
 
 .events .no-event{
     width: 100%;
-    height: 100%;
-    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
@@ -478,18 +479,49 @@ body{
     pointer-events: none;
 }
 
+
+.labelInputi{
+    width: 100%;
+    border: 1px solid black;
+    padding:10px;
+    border-radius: 20px;
+    line-height: 60px;
+}
+.labelInputi input{
+    position: absolute;
+    margin-left: 10px;
+    margin-top:10px !important;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    padding:10px !important;
+} 
+.labelInputi p{
+    margin-left: 70px;
+   display:inline;
+   margin-bottom: 10px !important;
+   padding:9px;
+}
+.cenaUsluge{
+    width: 100%;
+    margin-left: auto;
+    display:inline-block;
+}
+
+
+
 @media(max-width:1000px){
     body{
         align-items: flex-start;
         justify-content: flex-start;
     }
-    .container{
+    .kontenjer{
         min-height: 100vh;
         flex-direction: column;
         border-radius: 0;
     }
-    .container .left,
-    .container .right{
+    .kontenjer .left,
+    .kontenjer .right{
         width: 100%;
         height: 100%;
         padding: 20 0;
