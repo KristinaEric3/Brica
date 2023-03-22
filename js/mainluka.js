@@ -122,4 +122,135 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     let expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+<<<<<<< HEAD
   }
+
+
+  function validacijalogin(){
+    let email=document.querySelector("#email").value;
+    let pass=document.querySelector("#pass").value;
+    let error1 = document.querySelector("#error1");
+    let error2 = document.querySelector("#error2");
+
+    if (email == "" ||  pass == ""){
+        
+        if(email=="" && pass!="")
+       {
+          error1.innerHTML="<p style='margin-top:5px;color:red;'>Niste uneli email!</p>";
+        error2.innerHTML="";
+      }
+      else if(email !="" && pass =="")
+      {
+         error2.innerHTML="<p style='margin-top:5px;color:red;'>Niste uneli lozinku!</p>";
+         error1.innerHTML="";
+      }
+     else
+      {
+        error1.innerHTML="<p style='margin-top:5px;color:red;'>Niste uneli email!</p>";
+        error2.innerHTML="<p style='margin-top:5px;color:red;'>Niste uneli lozinku!</p>";  
+      }
+      return false;
+  }
+  else{
+    for(let i of korisnici)
+    {
+      if(email == i['EMAIL']  && pass== i['PASSWORD'])
+      {
+        window.location.assign("index.php");
+      }
+  }
+   
+}
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function validacijasignup(){
+    let name=document.forms["formSignIn"]["name"].value;
+    let surname=document.forms["formSignIn"]["surname"].value;
+    let email2=document.forms["formSignIn"]["email2"].value;
+    let phone=document.forms["formSignIn"]["phone"].value;
+    let password=document.forms["formSignIn"]["password"].value;
+    let password2=document.forms["formSignIn"]["password2"].value;
+    let error1 = document.querySelector("#error1");
+    let error2 = document.querySelector("#error2");
+    let error4 = document.querySelector("#error4");
+    let error5 = document.querySelector("#error5");
+
+  
+    if (name.length<3  || surname.length<3 ||  password.length<3 || password2!=password){
+        
+        if(name.length<3)
+        {
+           error1.innerHTML="<p style='margin-top:5px;color:red;'>Minimum 3 karaktera!</p>";
+           error4.innerHTML="";
+           error5.innerHTML="";
+        }
+        if(surname.length<3)
+        {
+           error1.innerHTML="<p style='margin-top:5px;color:red;'>Minimum 3 karaktera!</p>";
+           error4.innerHTML="";
+           error5.innerHTML="";
+        }
+       else if( password.length < 3)
+        {
+         error1.innerHTML="";
+         error5.innerHTML="";
+         error4.innerHTML="<p style='margin-top:5px;color:red;'>Minimum 3 karaktera!</p>";
+     }
+       else if( password2 != password)
+        {
+         error4.innerHTML="";
+         error1.innerHTML="";
+         error5.innerHTML="<p style='margin-top:5px;color:red;'>Lozinke se ne poklapaju!</p>";       }
+
+         return false;
+     }
+     else{
+       for(let i of korisnici)
+       {
+         if(email2 == i['EMAIL'])
+         {
+           error4.innerHTML="";
+           error5.innerHTML="";
+           error1.innerHTML="";
+           error2.innerHTML="<p style='margin-top:5px;color:red;'>Email adresa vec postoji!</p>";
+           return false;
+         }
+
+       }
+       //return ajaxAddUser();
+       
+     }
+    
+   
+       }
+
+
+    
+
+
+
+
+      // function ajaxAddUser() {
+       // const xhttp = new XMLHttpRequest();
+       // xhttp.onreadystatechange = function() {
+        //  if (this.readyState == 4 && this.status == 200) {
+          //  document.querySelector("body").innerHTML =
+           // this.responseText;
+         // }
+        //};
+        //xhttp.open("GET", "addUser.php");
+        //xhttp.send();
+      //}
+ 
+
+   
+
+  
+      }
+=======
+  }
+>>>>>>> da96520c0ca3badf55831cf93e03c8fc4e32da9d
