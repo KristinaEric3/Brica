@@ -169,7 +169,7 @@ gotoBtn.addEventListener("click",gotoDate);
 
 function gotoDate(){
     let dateArr= dateInput.value.split("/");
-console.log(dateArr);
+
     if(dateArr.length === 2){
         if(dateArr[0]> 0 && dateArr[0] < 13 && dateArr[1].length ===4){
             month = dateArr[0] - 1;
@@ -190,12 +190,8 @@ let addEventFrom = document.querySelector(".event-time-from");
 let addEventTo = document.querySelector(".event-time-to");
 
 
-addEvent.addEventListener("click",()=>{
-addEventContainer.classList.toggle("active");
-});
-addEventCloseBtn.addEventListener("click",()=>{
-    addEventContainer.classList.remove("active");
-});
+
+
 
 document.addEventListener("click",(e)=>{
     if(e.target != addEvent && !addEventContainer.contains(e.target)){
@@ -203,31 +199,6 @@ document.addEventListener("click",(e)=>{
     }
 });
 
-addEventTitle.addEventListener("input",(e)=>{
-    addEventTitle.value = addEventTitle.value.slice(0,50);
-});
-
-addEventFrom.addEventListener("input",(e)=>{
-    addEventFrom.value = addEventFrom.value.replace(/[^0-9:]/g,"");
-
-    if(addEventFrom.value.length===2){
-        addEventFrom.value+=":";
-    }
-    if(addEventFrom.value.length>5){
-        addEventFrom.value=addEventFrom.value.slice(0,5);
-    }
-});
-
-addEventTo.addEventListener("input",(e)=>{
-    addEventTo.value = addEventTo.value.replace(/[^0-9:]/g,"");
-
-    if(addEventTo.value.length===2){
-        addEventTo.value+=":";
-    }
-    if(addEventTo.value.length>5){
-        addEventTo.value=addEventTo.value.slice(0,5);
-    }
-});
 
 function addListener(){
     let days=document.querySelectorAll(".day");
@@ -321,70 +292,10 @@ function updateEvents(date){
         </div>
         `;
     }
-    console.log(events);
     eventsContainer.innerHTML=events;
     saveEvents();
 }
 
-addEventBtn.addEventListener("click", ()=>{
-    let eventTitle=addEventTitle.value;
-    let eventTimeFrom=addEventFrom.value;
-    let eventTimeTo=addEventTo.value;
-
-    if(eventTitle == "" || eventTimeFrom == "" || eventTimeTo == ""){
-        alert("Please fill all the fields");
-        return;
-    }
-
-    let  timeFromArr=eventTimeFrom.split(":");
-    let timeToArr=eventTimeTo.split(":");
-    if(timeFromArr.length != 2 || timeToArr != 2|| timeFromArr[0]>23 || timeFromArr[1]>59 || timeToArr[0]>23 || timeToArr[1]>59 )
-    {
-        alert("Invalid Time Format");
-        return false;
-    }
-
-    let timeFrom=convertTime(eventTimeFrom);
-    let timeTo=convertTime(eventTimeTo);
-    let newEvents={
-        title:eventTitle,
-        time: timeFrom + " - " + timeTo,
-    };
-
-    let eventAdded=false;
-    if(eventsArr.length>0){
-        eventsArr.forEach((item)=>{
-            if(item.day==activeDay && item.month == month + 1 && item.year==year){
-                item.events.push(newEvents);
-                eventAdded=true;
-            }
-                
-        });
-    }
-
-    if(!eventAdded)
-    {
-        eventsArr.push({
-        day:activeDay,
-        month:month + 1,
-        year:year,
-        events:[newEvents],
-
-        });
-    }
-
-    addEventContainer.classList.remove("active");
-    addEventTitle.value= "";
-    addEventFrom.value= "";
-    addEventTo.value= "";
-
-    updateEvents(activeDay);
-
-    let activeDayElem=document.querySelector(".day.active");
-    if(!activeDayElem.classList.contains("event")){
-        activeDayElem.classList.add("event");
-    }
-});
 
 function convertTime(time){
     let timeArr=time.split(":");

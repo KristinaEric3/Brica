@@ -1,7 +1,7 @@
 <?php
 
-require("funkcije.php");
 
+require("funkcije.php");
 
 ?>
 <!DOCTYPE html>
@@ -48,29 +48,26 @@ require("funkcije.php");
   </span>
   </div>
 </nav>
-<h2 class="text-center">USLUGE</h2>
-<button onclick="dodajUslugu()"><i class="fa fa-2x fa-plus"></i></button>
-<div id="prikazUsluge"></div>
+<h2 class="text-center">Zaposleni</h2>
+<button onclick="dodajZaposlenog()"><i class="fa fa-2x fa-plus"></i></button>
+<div id="prikazZaposlenog"></div>
 <table class="table">
   <thead class="table-dark">
    <tr>
     <th>#</th>
-    <th>Naziv</th>
-    <th>Cena</th>
-    <th>Vreme</th>
+    <th>Ime</th>
+    <th>Prezime</th>
+    <th>Email</th>
+    <th>Phone</th>
    <th></th>
    </tr>
   </thead>
   <tbody>
- 
-  <?php 
-    prikazUslugeAdmin();
+   <?php
+    prikaziZaposleneAdmin();
    ?>
-   
   </tbody>
-  
 </table>
-
 <script src="../js/mainluka.js"></script>
 </body>
 </html>
