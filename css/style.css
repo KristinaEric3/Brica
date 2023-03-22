@@ -1,3 +1,21 @@
 nav a{
     margin:0 20px 0 20px;
 }
+
+.formcenavreme{
+    width:100% !important;
+}
+.formcenavreme input ,
+.formcenavreme select{
+    width:60%;
+}
+#errornazivUsluge,
+#errorcenaUsluge,
+#errorvremeUsluge {
+    display: none;
+    font-size: 13px;
+    color:red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+

@@ -13,35 +13,38 @@ require "funkcije.php";
     <title>Document</title>
 </head>
 <body>
-   <form action="AddUsluge" class="m-5" method="post">
+   <form action="addUsluge.php" class="m-5" method="post" onsubmit="return validacijaaddUsluga()">
     <h2>Nova Usluga</h2>
     <hr>
     <div class="row">
         <div class="col-sm-12 col-md-3">
         <div class="form-group">
-          <input type="text" name="nazivUsluge" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Naziv">
+          <input type="text" name="nazivUsluge" required class="form-control" id="nazivUsluge" aria-describedby="emailHelp" placeholder="Naziv">
+        <small id="errornazivUsluge">Minimum 10 karaktera!</small>
         </div>
         </div>
-        <div class="col-sm-12 col-md-2">
-        <div class="form-group">
-            <input type="number" name="cenaUsluge" required class="form-control" id="exampleInputPassword1" placeholder="Cena">
+        <div class="col-sm-12 col-md-3">
+        <div class="form-group formcenavreme">
+            <input type="number"  name="cenaUsluge" required class="form-control" id="cenaUsluge" placeholder="Cena">
+            <small id="errorcenaUsluge">Minimum 2 karaktera!</small>
         </div>
         </div>
-        <div class="col-sm-12 col-md-2">
-        <div class="form-group" >
-            <select class="form-select" id="selectUsluge" name="vremeUsluge" >
+        <div class="col-sm-12 col-md-3">
+        <div class="form-group formcenavreme" >
+            <select class="form-select" id="selectUsluge"  name="vremeUsluge" >
                 <option selected>Vreme</option>
               <?php selectUsluge();?>
               </select>
+              <small id="errorvremeUsluge">Ovo polje je obavezno!</small>
         </div>
     </div>
-        <div class="col-sm-12 col-md-2">
+        <div class="col-sm-12 col-md-3">
         <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="submit" class="btn btn-primary" value="Dodaj">
         </div>
         </div>
     </div>
    </form>
-   <script src="../js/main.js"></script>
+   <script src="../js/mainluka.js"></script>
 </body>
 </html>
