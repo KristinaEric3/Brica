@@ -241,7 +241,7 @@ require('konekcija.php');
               </div>
               
               <div class="button input-box">
-              <input name="btn" class="btn btn-success btn-lg btn-block" type="submit" value="Prijavi se">
+              <input name="btn" class=" default_btn btn-lg" type="submit" value="Prijavi se">
               </div>
               <div class="text sign-up-text">Nemate nalog? <label for="flip">Registrujte se brzo i lako</label></div>
             </div>

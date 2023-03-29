@@ -122,7 +122,6 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     let expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-<<<<<<< HEAD
   }
 
 
@@ -161,12 +160,14 @@ function setCookie(cname, cvalue, exdays) {
   }
    
 }
+
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   let expires = "expires="+ d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
 function validacijasignup(){
     let name=document.forms["formSignIn"]["name"].value;
     let surname=document.forms["formSignIn"]["surname"].value;
@@ -251,6 +252,18 @@ function validacijasignup(){
 
   
       }
-=======
-  }
->>>>>>> da96520c0ca3badf55831cf93e03c8fc4e32da9d
+
+      function obrisiKorisnika(id){
+        setCookie('idKorisnikaDelete',id,1);
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.querySelector("body").innerHTML = this.responseText;
+            }
+           
+          };
+          xhttp.open("GET", "deleteUser.php", true);
+            xhttp.send();
+        
+    
+    }

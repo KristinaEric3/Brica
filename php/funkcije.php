@@ -58,8 +58,9 @@ function prikazUslugeAdmin(){
                 echo '     <tr>
                 <td>'.($br+1).'</td>
                 <td>'.$row['NAZIVUSLUGE'].'</td>
-                <td>'.$row['CENAUSLUGE'].' RSD</td>
+               
                 <td>'.$row['VREMEUSLUGE'].' min</td>
+                <td>'.$row['CENAUSLUGE'].' RSD</td>
                 <td>
                 <button class="btn"><i class="fas fa-edit"></i></button>
                 <button onclick="obrisiUslugu('.$row['IDUSLUGE'].')" class="btn"><i class="fas fa-trash"></i></button>
@@ -157,6 +158,54 @@ function izvuci(){
             </script>
             ';
 }
+
+
+
+function prikaziKorisnike(){
+   
+    require("konekcija.php");
+    $korisnici = array();
+    $q = "SELECT * FROM korisnik";
+    $r = mysqli_query($dbc,$q);
+    $br =0;
+    if($r)
+    {
+        $num = mysqli_num_rows($r);
+        if($num>0)
+        {
+            while($row = mysqli_fetch_array($r,MYSQLI_ASSOC))
+            {
+                $korisnici[] = $row;
+                echo ' <tr id="'.$row['IDUSER'].'">
+                <td>'.($br+1).'</td>
+                <td class="ime">'.$row['IME'].'</td>
+                <td>'.$row['PREZIME'].'</td>
+                <td>'.$row['EMAIL'].'</td>
+                <td>'.$row['PHONE'].'</td>
+                <td>
+               
+                <button onclick="obrisiKorisnika('.$row['IDUSER'].')" class="btn"><i class="fas fa-trash"></i></button>
+                </td>
+                </tr>';
+                $br ++;
+            }
+        }else
+        {
+            echo '<div>Nema podataka za prikaz!</div>';
+        }
+    }
+    else
+    {
+    echo 'Greska u bazi!';
+    }
+    echo '<script>
+                let korisnici = ';echo json_encode($korisnici); echo ' ;
+            </script> 
+            ';
+}
+
+
+
 
 
 ?>

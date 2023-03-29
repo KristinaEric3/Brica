@@ -24,6 +24,81 @@ nav a{
     height: 90px;
 }
 
+#adminNaslovi{
+    padding-top:50px;
+}
+.dugmeDodaj{
+    background-color: #9e8a78;
+    color: #fff;
+}
+
+.dugmeDodaj:hover{
+    background-color: #888;
+    color:black;
+
+}
+
+#kontaktIkonice{
+    color: white;
+}
+
+
+#ime{
+    color: white;
+}
+#prezime{
+    color: white;
+}
+#email{
+    color: white;
+}
+#poruka{
+    color: white;
+}  
+#telefon{
+    color: white;
+}
+
+
+#ikoniceNav{
+    width: 50px;
+    height: 50px;
+}
+
+.dugmeLazna{
+    padding-top: -30px;
+}
+
+.slikaLazna {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+   
+  
+   
+}
+
+/*.laznaIkonice {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.laznaOblik{
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 50%;
+} */
+
+#laznaNaslov{
+    padding-top: 10px;
+}
+
+
 h1 {
     font-family: prata, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -299,6 +374,7 @@ body.loaded #preloader {
     -ms-transition: color .4s cubic-bezier(.4, 0, .2, 1);
     -o-transition: color .4s cubic-bezier(.4, 0, .2, 1);
     transition: color .4s cubic-bezier(.4, 0, .2, 1);
+
 }
 .default_btn:before {
     content: "";
@@ -359,6 +435,7 @@ body.loaded #preloader {
     height: 10px;
     background: url(../img/heading-line.png) center center no-repeat;
     position: relative;
+    margin-bottom: 20px;
 }
 a, a:hover, .overlay, img, .form-control, .form-control:hover, button {
     -webkit-transition: all .5s;
@@ -825,6 +902,8 @@ why_section ul.list li:before {
     left: 0;
     top: 0;
 }
+
+
 .service_section {
 }
 .service_content img {
@@ -1208,10 +1287,11 @@ select.form-control:not([size]):not([multiple]) {
     letter-spacing: .5px;
     margin: 0 0 6px;
     overflow: hidden;
-    width: 90%}
+    width: 90%
+}
 .pricing_section .price_wrap .price_list li h4:after {
     color: #bbb;
-    content: "--------------------" "--------------------" "--------------------" "--------------------";
+    content: "-------------" "---------------" "---------------" "----------------";
     font-weight: 400;
     margin-left: 10px;
     position: absolute;
@@ -1221,9 +1301,9 @@ select.form-control:not([size]):not([multiple]) {
 }
 .pricing_section .price_wrap .price_list li span.price {
     font-family: prata, sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     color: #9e8a78;
-    font-weight: 700;
+    font-weight: 600;
     position: absolute;
     top: 0;
     right: 0;

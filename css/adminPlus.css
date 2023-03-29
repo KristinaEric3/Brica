@@ -1,0 +1,29 @@
+#plus{
+    width:100%;
+    height: auto;
+    top:0;
+    left:0;
+    position: relative; 
+    z-index: 1;
+  
+
+
+   
+}
+
+#plus2{
+   color: black;
+    /*color: #fff;*/
+    transition: all 150ms ease-in-out;
+   /* top:11%; */
+       left:55%;
+       width:100px;
+       height:40px;
+       position: absolute;
+       z-index: 2;
+   
+}
+#plus2:hover {
+    box-shadow: 0 0 10px 0 #fff inset, 0 0 10px 4px #777;
+    
+}

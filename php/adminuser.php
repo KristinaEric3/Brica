@@ -1,4 +1,6 @@
 <?php
+
+
 require("funkcije.php");
 
 ?>
@@ -13,7 +15,6 @@ require("funkcije.php");
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/adminUser.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
-    <link href="../css/adminPlus.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -49,11 +50,9 @@ require("funkcije.php");
   </span>
   </div>
 </nav>
-<h2 class="text-center" id="adminNaslovi">ZAPOSLENI</h2>
-<div id="plus">
-<button id="plus2"onclick="dodajZaposlenog()"><i class="fa fa-2x fa-plus"></i></button>
-</div>
-<div id="prikazZaposlenog"></div>
+<h2 class="text-center" id="adminNaslovi">KORISNICI</h2>
+<!--<button onclick="prikaziKorisnike()"><i class="fa fa-2x fa-plus"></i></button> -->
+<div id="prikazKorisnika"></div>
 <section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -79,7 +78,7 @@ require("funkcije.php");
                           <tr class="alert" role="alert">
 						    	
                           <?php
-                      prikaziZaposleneAdmin();
+                     prikaziKorisnike();
                           ?>
                          </tbody>
                     </table>
