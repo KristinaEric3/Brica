@@ -290,6 +290,7 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     let expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+<<<<<<< HEAD
 
   }
   function getCookie(cname) {
@@ -306,6 +307,9 @@ function setCookie(cname, cvalue, exdays) {
       }
     }
     return "";
+=======
+<<<<<<< HEAD
+>>>>>>> 9cde3f32a2ea65fea149fd83dda34821d603db61
   }
 
 
@@ -342,7 +346,11 @@ function setCookie(cname, cvalue, exdays) {
         window.location.assign("index.php");
       }
   }
+<<<<<<< HEAD
 }
+=======
+   
+>>>>>>> 9cde3f32a2ea65fea149fd83dda34821d603db61
 }
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
@@ -411,6 +419,15 @@ function validacijasignup(){
    
        }
 
+<<<<<<< HEAD
+=======
+
+    
+
+
+
+
+>>>>>>> 9cde3f32a2ea65fea149fd83dda34821d603db61
       // function ajaxAddUser() {
        // const xhttp = new XMLHttpRequest();
        // xhttp.onreadystatechange = function() {
@@ -422,6 +439,7 @@ function validacijasignup(){
         //xhttp.open("GET", "addUser.php");
         //xhttp.send();
       //}
+<<<<<<< HEAD
 
       
 
@@ -500,3 +518,14 @@ function validacijasignup(){
 
   
 
+=======
+ 
+
+   
+
+  
+      }
+=======
+  }
+>>>>>>> da96520c0ca3badf55831cf93e03c8fc4e32da9d
+>>>>>>> 9cde3f32a2ea65fea149fd83dda34821d603db61
