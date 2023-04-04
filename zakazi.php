@@ -1,10 +1,6 @@
 <?php
 require("php/funkcije.php");
-
-if($_SESSION['usluge'] !='')
-{
-    $usluge = $_SESSION['usluge'];
-}
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +15,27 @@ if($_SESSION['usluge'] !='')
 </head>
 <body>  
  
-    
+<div class="brice">
+            <div class="row">
+                <div class="col-sm-5 offset-sm-1">
+                    <h2 class="h2 text-center mt-4 mb-4">Izaberite bricu</h2>
+                <div class="row prikazBricaRez">
+
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="col-sm-10 offset-sm-2">
+                <h2 class="h2 text-center mt-4 mb-4">Izaberite uslugu</h2>
+    <?php
+    prikazUsluge();
+    ?>
+ 
+ <button onclick="dodajRezervaciju()" class="btn  btn-primary">Zakazi</button>
+</div>
+</div>
+</div>
+</div>
+
     <div class="kontenjer">
         <div class="left">
             <div class="calendar">
@@ -90,23 +106,39 @@ if($_SESSION['usluge'] !='')
                 <div class="event-date">11 March 2023</div>
             </div>
             <div class="events">
-              
+             
+                <div class="row prikaz">
+
+                
+             </div>
             </div>
         </div>
     </div>
-
-   <div class="col-md-5 offset-md-7 mt-4">
-    <?php
-    prikaziZaposlene();
-    prikazUsluge();
-    ?>
-   
-</div>
-<script>
-    let usluge =[];
-   usluge = <?php echo json_encode($usluge);?>;
-   console.log(usluge);
-</script>
+  
+  <div class="row izlistajRezervacije">
+                <div class="col-md-12">
+                    <div class="table-wrap">
+                        <table class="table table-responsive-xl">
+                          <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>KLIJENT</th>
+                                 <th>BRICA</th>
+                                <th>USLUGA / CENA</th>
+                  <th>DATUM / VREME</th>
+                  <th></th>
+                              <th>&nbsp;</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          <tr class="alert" role="alert">
+                                
+                         
+                         </tbody>
+                    </table>
+                  </div>
+                  </div>
+                  </div>
 <script src="js/js.js"></script>
 <script src="js/mainluka.js"></script>
 </body>
